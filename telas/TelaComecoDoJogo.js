@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
 import Cartao from '../components/Cartao';
+import Cores from '../cores/cores';
+import Entrada from '../components/Entrada';
 
 const TelaComecoDoJogo = (props) => {
     return(
@@ -9,12 +11,27 @@ const TelaComecoDoJogo = (props) => {
             <Text style ={estilos.titulo}>Comece um Jogo</Text>
             <Cartao estilos ={estilos.entradaView}>
                 <Text>Escolha um número</Text>
-                <TextInput />
+                <Entrada 
+                    estilos={estilos.entrada}
+                    autoCaptalize='none'
+                    blurOnSubmit
+                    autoCorrect={false}
+                    keyboardType='number-pad'
+                    maxLenth={2}
+                />
                 <View style ={estilos.buttonView}>
-                    <Button
-                        title = "Reiniciar"/>
-                    <Button
-                        title = "Confirmar"/>
+                    <View style={estilos.botao}>
+                        <Button
+                            title = "Reiniciar"
+                            color = {Cores.accent}
+                        />
+                    </View>
+                    <View style= {estilos.botao}>
+                        <Button
+                            title = "Confirmar"
+                            color = {Cores.accent}
+                        />
+                    </View>
                 </View>
             </Cartao>
         </View>
@@ -23,6 +40,13 @@ const TelaComecoDoJogo = (props) => {
 }
 
 const estilos = StyleSheet.create({
+    entrada:{
+        width:50,
+        textAlign:'center'
+    },
+    botao:{
+        width: 100
+    },
     titulo:{
         fontSize:20,
         marginVertical: 10,

@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import Cores from '../cores/cores';
 
 
 const Cabecalho = (props) => {
@@ -17,7 +18,7 @@ const estilos = StyleSheet.create({
         width: '100%',
         height: 95,
         paddingTop: 40,
-        backgroundColor: '#2196F3',
+        backgroundColor: Cores.primary,
         alignItems: 'center',
         justifyContent: 'center'
     },
